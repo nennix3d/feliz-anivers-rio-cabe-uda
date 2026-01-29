@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Feliz Aniversário 💜</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <div class="card">
+        <h1>Feliz Aniversário!</h1>
+        <h2>Kézia Cabeçuda 🎉</h2>
+
+        <div class="cake">🎂</div>
+
+        <p>
+            Que seu dia seja incrível,<br>
+            cheio de cod para você passar raiva, e também q você seja a pior do time! 💜✨
+        </p>
+
+        <button id="botao" class="surprise-btn" onclick="mostrarSurpresa()">
+            🎁 Clique para surpresa
+        </button>
+
+        <p id="mensagem" class="mensagem">
+            sua nortista autista eu amo muito você 💜
+        </p>
+    </div>
+
+    <!-- Confetes -->
+    <div id="confetes"></div>
+
+    <script>
+        function mostrarSurpresa() {
+            // mostra mensagem
+            document.getElementById("mensagem").classList.add("mostrar");
+
+            // esconde botão
+            document.getElementById("botao").style.display = "none";
+
+            // cria confetes
+            for (let i = 0; i < 50; i++) {
+                const confete = document.createElement("div");
+                confete.classList.add("confete");
+                confete.style.left = Math.random() * 100 + "vw";
+                confete.style.animationDuration = (Math.random() * 2 + 2) + "s";
+                confete.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+                document.getElementById("confetes").appendChild(confete);
+
+                setTimeout(() => confete.remove(), 4000);
+            }
+        }
+    </script>
+
+</body>
+</html>
