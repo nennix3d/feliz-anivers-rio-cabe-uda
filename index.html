@@ -1,70 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Feliz Aniversário 💜</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- CSS separado -->
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aniversário da Kézia 🎉</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<div class="card">
+<img src="img1.png" alt="Imagem esquerda" class="side-image left" id="imgLeft" />
+<img src="img2.png" alt="Imagem direita" class="side-image right" id="imgRight" />
 
-    <!-- Imagens laterais -->
-    <img src="img1.png" class="side-img left" id="imgLeft">
-    <img src="img2.png" class="side-img right" id="imgRight">
 
-    <div class="card">
-        <h1>Feliz Aniversário!</h1>
-        <h2>Kézia Cabeçuda 🎉</h2>
+<div class="emoji">🎂</div>
+<h1>Feliz Aniversário</h1>
+<h2>Kézia Cabeçuda 💜</h2>
+<p>
+Hoje é o dia da melhor melhor autista que eu já conheci ✨<br /><br />
+Que seu aniversário tenha muita alegria 🎉💜<br />
+e que você jogue COD para passar raiva🥱<br />
+</p>
 
-        <div class="cake">🎂</div>
 
-        <p>
-            Que seu dia seja incrível,<br>
-            cheio de amor e cod também para você passar raiva! 💜✨
-        </p>
+<button onclick="mostrarSurpresa()">🎁 Botão surpresa</button>
 
-        <button id="botao" class="surprise-btn" onclick="mostrarSurpresa()">
-            🎁 Clique para surpresa
-        </button>
 
-        <p id="mensagem" class="mensagem">
-            sua nortista autista eu amo muito você 💜
-        </p>
-    </div>
+<div id="surpresa" class="mensagem-surpresa">
+💜 Eu te amo muito sua nortista autista 💜
+</div>
 
-    <!-- Som (toca só uma vez) -->
-    <audio id="somSurpresa">
-        <source src="Yayyy - Sound Effect.mp3" type="audio/mpeg">
-    </audio>
 
-    <script>
-        function mostrarSurpresa() {
-            // tocar som uma única vez
-            const som = document.getElementById("somSurpresa");
-            som.play();
+<audio id="som" src="Yayyy - Sound Effect.mp3"></audio>
+</div>
 
-            document.getElementById("mensagem").classList.add("mostrar");
-            document.getElementById("botao").style.display = "none";
 
-            // mostrar imagens
-            document.getElementById("imgLeft").classList.add("show");
-            document.getElementById("imgRight").classList.add("show");
+<script>
+function mostrarSurpresa() {
+document.getElementById('surpresa').style.display = 'block';
+document.getElementById('imgLeft').style.display = 'block';
+document.getElementById('imgRight').style.display = 'block';
 
-            // confetes
-            for (let i = 0; i < 50; i++) {
-                const confete = document.createElement("div");
-                confete.classList.add("confete");
-                confete.style.left = Math.random() * 100 + "vw";
-                confete.style.animationDuration = (Math.random() * 2 + 2) + "s";
-                confete.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
-                document.body.appendChild(confete);
 
-                setTimeout(() => confete.remove(), 4000);
-            }
-        }
-    </script>
+const som = document.getElementById('som');
+som.currentTime = 0;
+som.play();
 
+
+soltarConfete();
+}
+
+
+function soltarConfete() {
+for (let i = 0; i < 120; i++) {
+const c = document.createElement('div');
+c.className = 'confetti';
+c.style.left = Math.random() * 100 + 'vw';
+c.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 60%)`;
+c.style.animationDuration = (Math.random() * 2 + 2) + 's';
+document.body.appendChild(c);
+setTimeout(() => c.remove(), 4000);
+}
+}
+</script>
 </body>
 </html>
