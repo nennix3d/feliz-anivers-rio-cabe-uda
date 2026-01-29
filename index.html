@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Feliz Aniversário 💜</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS separado -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,11 +34,17 @@
         </p>
     </div>
 
-    <!-- Confetes -->
-    <div id="confetes"></div>
+    <!-- Som (toca só uma vez) -->
+    <audio id="somSurpresa">
+        <source src="Yayyy - Sound Effect.mp3" type="audio/mpeg">
+    </audio>
 
     <script>
         function mostrarSurpresa() {
+            // tocar som uma única vez
+            const som = document.getElementById("somSurpresa");
+            som.play();
+
             document.getElementById("mensagem").classList.add("mostrar");
             document.getElementById("botao").style.display = "none";
 
@@ -44,7 +52,7 @@
             document.getElementById("imgLeft").classList.add("show");
             document.getElementById("imgRight").classList.add("show");
 
-            // confete
+            // confetes
             for (let i = 0; i < 50; i++) {
                 const confete = document.createElement("div");
                 confete.classList.add("confete");
