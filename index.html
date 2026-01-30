@@ -1,66 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Aniversário da Kézia 🎉</title>
-<link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>Feliz Aniversário 💜</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="card">
-<img src="img1.png" alt="Imagem esquerda" class="side-image left" id="imgLeft" />
-<img src="img2.png" alt="Imagem direita" class="side-image right" id="imgRight" />
 
+    <div class="container">
+        <img src="imagem-esquerda.png" class="foto esquerda escondido">
 
-<div class="emoji">🎂</div>
-<h1>Feliz Aniversário</h1>
-<h2>Kézia Cabeçuda 💜</h2>
-<p>
-Hoje é o dia da melhor melhor autista que eu já conheci ✨<br /><br />
-Que seu dia seja incrivél e cheio de amor 🎉💜<br />
-e cod também para você passar raiva🥱<br />
-</p>
+        <div class="centro">
+            <h1 class="titulo">Kézia Cabeçuda</h1>
 
+            <button id="surpresaBtn">🎁 Botão Surpresa</button>
 
-<button onclick="mostrarSurpresa()">🎁 Botão surpresa</button>
+            <p id="mensagem" class="escondido">
+                Eu te amo muito sua nortista autista 💜
+            </p>
+        </div>
 
+        <img src="imagem-direita.png" class="foto direita escondido">
+    </div>
 
-<div id="surpresa" class="mensagem-surpresa">
-💜 Eu te amo muito sua nortista autista 💜
-</div>
+    <audio id="musica" src="Yayyy - Sound Effect.mp3"></audio>
 
-
-<audio id="som" src="Yayyy - Sound Effect.mp3"></audio>
-</div>
-
-
-<script>
-function mostrarSurpresa() {
-document.getElementById('surpresa').style.display = 'block';
-document.getElementById('imgLeft').style.display = 'block';
-document.getElementById('imgRight').style.display = 'block';
-
-
-const som = document.getElementById('som');
-som.currentTime = 0;
-som.play();
-
-
-soltarConfete();
-}
-
-
-function soltarConfete() {
-for (let i = 0; i < 120; i++) {
-const c = document.createElement('div');
-c.className = 'confetti';
-c.style.left = Math.random() * 100 + 'vw';
-c.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 60%)`;
-c.style.animationDuration = (Math.random() * 2 + 2) + 's';
-document.body.appendChild(c);
-setTimeout(() => c.remove(), 4000);
-}
-}
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
