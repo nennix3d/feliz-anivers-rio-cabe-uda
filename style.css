@@ -1,51 +1,62 @@
 body {
     margin: 0;
     height: 100vh;
-    background: linear-gradient(135deg, #4b0082, #800080);
-    font-family: Arial, sans-serif;
+    background: linear-gradient(160deg, #6a0dad, #b983ff);
+    font-family: "Trebuchet MS", Arial, sans-serif;
     overflow: hidden;
+}
+
+.emoji-bg {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    opacity: 0.4;
 }
 
 .container {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 40px;
+    justify-content: space-around;
 }
 
-.centro {
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 30px;
     text-align: center;
+    box-shadow: 0 0 40px rgba(0,0,0,0.2);
 }
 
 .titulo {
-    font-size: 4rem;
+    font-size: 3rem;
     color: #fff;
-    text-shadow:
-        3px 3px 0 #c77dff,
-        6px 6px 0 #9d4edd;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 #surpresaBtn {
-    padding: 15px 30px;
-    font-size: 1.2rem;
+    padding: 15px 35px;
+    font-size: 1.1rem;
     border: none;
-    border-radius: 30px;
-    background: #c77dff;
-    color: #2b004f;
+    border-radius: 50px;
+    background: #e0aaff;
+    color: #4b0082;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: 0.3s;
 }
 
 #surpresaBtn:hover {
     transform: scale(1.1);
+    background: #f3d9ff;
 }
 
 #mensagem {
-    margin-top: 30px;
-    font-size: 1.5rem;
-    color: white;
+    margin-top: 25px;
+    font-size: 1.4rem;
+    color: #fff;
 }
 
 .foto {
@@ -56,11 +67,11 @@ body {
 @keyframes aparecer {
     from {
         opacity: 0;
-        transform: scale(0.5);
+        transform: translateY(40px) scale(0.7);
     }
     to {
         opacity: 1;
-        transform: scale(1);
+        transform: translateY(0) scale(1);
     }
 }
 
@@ -77,11 +88,7 @@ body {
 }
 
 @keyframes cair {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-    }
-    100% {
+    to {
         transform: translateY(100vh) rotate(720deg);
         opacity: 0;
     }

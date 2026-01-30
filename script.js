@@ -12,7 +12,7 @@ botao.addEventListener("click", () => {
 
     musica.play();
 
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < 90; i++) {
         criarConfete();
     }
 
@@ -25,10 +25,9 @@ function criarConfete() {
 
     confete.style.left = Math.random() * window.innerWidth + "px";
     confete.style.backgroundColor =
-        `hsl(${Math.random() * 360}, 100%, 50%)`;
+        `hsl(${Math.random() * 360}, 100%, 70%)`;
 
     document.body.appendChild(confete);
 
     setTimeout(() => confete.remove(), 3000);
 }
-
