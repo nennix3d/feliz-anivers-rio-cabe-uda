@@ -1,11 +1,19 @@
-body {
+/* ===== RESET ===== */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
     height: 100vh;
     background: linear-gradient(160deg, #6a0dad, #b983ff);
     font-family: "Trebuchet MS", Arial, sans-serif;
     overflow: hidden;
 }
 
+/* ===== EMOJIS DE FUNDO ===== */
 .emoji-bg {
     position: absolute;
     top: 20px;
@@ -13,30 +21,38 @@ body {
     text-align: center;
     font-size: 1.5rem;
     opacity: 0.4;
+    pointer-events: none;
 }
 
+/* ===== CONTAINER PRINCIPAL ===== */
 .container {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    padding: 40px;
 }
 
+/* ===== CARD CENTRAL ===== */
 .card {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(12px);
     padding: 40px;
     border-radius: 30px;
     text-align: center;
-    box-shadow: 0 0 40px rgba(0,0,0,0.2);
+    box-shadow: 0 0 40px rgba(0,0,0,0.25);
+    max-width: 420px;
 }
 
+/* ===== TÍTULO ===== */
 .titulo {
     font-size: 3rem;
     color: #fff;
     margin-bottom: 30px;
+    line-height: 1.2;
 }
 
+/* ===== BOTÃO ===== */
 #surpresaBtn {
     padding: 15px 35px;
     font-size: 1.1rem;
@@ -53,17 +69,20 @@ body {
     background: #f3d9ff;
 }
 
+/* ===== MENSAGEM ===== */
 #mensagem {
     margin-top: 25px;
     font-size: 1.4rem;
     color: #fff;
 }
 
+/* ===== IMAGENS ===== */
 .foto {
     width: 220px;
     animation: aparecer 1s ease forwards;
 }
 
+/* ===== ANIMAÇÃO DAS IMAGENS ===== */
 @keyframes aparecer {
     from {
         opacity: 0;
@@ -75,11 +94,12 @@ body {
     }
 }
 
+/* ===== ESCONDER ELEMENTOS ===== */
 .escondido {
     display: none;
 }
 
-/* Confete */
+/* ===== CONFETE ===== */
 .confete {
     position: absolute;
     width: 10px;
@@ -91,5 +111,52 @@ body {
     to {
         transform: translateY(100vh) rotate(720deg);
         opacity: 0;
+    }
+}
+
+/* ================================================= */
+/* 📱 RESPONSIVO PARA CELULAR */
+/* ================================================= */
+@media (max-width: 768px) {
+
+    body {
+        overflow-y: auto;
+    }
+
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .card {
+        padding: 25px;
+        border-radius: 25px;
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .titulo {
+        font-size: 2.2rem;
+    }
+
+    #surpresaBtn {
+        width: 100%;
+        padding: 15px;
+        font-size: 1rem;
+    }
+
+    #mensagem {
+        font-size: 1.2rem;
+    }
+
+    .foto {
+        width: 160px;
+        margin: 0 auto;
+    }
+
+    .emoji-bg {
+        font-size: 1.2rem;
     }
 }
